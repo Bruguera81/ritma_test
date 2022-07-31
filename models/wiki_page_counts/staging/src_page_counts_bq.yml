@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: my-wiki-data-bq
+    database: my-wiki-data-bq
+    schema: pagecounts
+    tables:
+      - name: raw_page_counts
