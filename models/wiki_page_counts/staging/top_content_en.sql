@@ -9,7 +9,7 @@ with top_content_en as (
     from {{ source('my-wiki-data-bq', 'raw_page_counts') }}
     where En ='en'
     Group by Origin, Content
-    Order by Top_Contents_En Des
+    Order by Top_Contents_En Desc
 )
 
     select *  from top_content_en limit 50
