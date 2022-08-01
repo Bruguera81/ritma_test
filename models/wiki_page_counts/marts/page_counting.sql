@@ -14,11 +14,11 @@ With counter_en as (
         Top_Contents_de as counter_amount
     from {{ ref('top_content_de')}}
 ),
-    counter_br as (
+    counter_pt as (
     select 
         Origin,
         Content,
-        Top_Contents_br as counter_amount
+        Top_Contents_pt as counter_amount
     from {{ ref('top_content_br') }}
 ), 
     page_counting as ( 
@@ -26,7 +26,7 @@ With counter_en as (
     union all
     select * from counter_de
     union all 
-    select * from counter_br
+    select * from counter_pt
 )
     select * from page_counting 
     order by counter_amount desc limit 50
