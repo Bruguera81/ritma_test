@@ -6,7 +6,7 @@ with main_countries as (
         sum(counter) as Top_Counters
 
     from {{ source('my-wiki-data-bq', 'raw_page_counts') }} 
-    where En in ('en','de','br')
+    where En in ('en','de','pt')
     Group by En
     order by Top_Counters desc
 ) 
